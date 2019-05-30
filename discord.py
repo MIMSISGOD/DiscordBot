@@ -1,4 +1,5 @@
 import discord
+import os
 
 
 client = discord.Client()
@@ -16,6 +17,7 @@ async def on_ready():
 async def on_message(message):
     if message.content.startswith("*Help"):
         await message.channel.send("바빠")
+          
 
-
-client.run("NTU4MjY5ODk4OTQyMzE2NTU0.XO1Bwg.SIJjWBzL9Zac3vfpg9-MVkfHi7o")
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
